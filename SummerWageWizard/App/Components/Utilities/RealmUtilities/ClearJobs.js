@@ -4,7 +4,7 @@ import {
     updateJobList,
 } from '../../../Redux/features/jobSlice'
 import { useState, useEffect } from 'react';
-import {clearJobsFromRealm} from '../../../Realm/realmJobUtilities';
+import { clearFromRealm } from '../../../Realm/dbCRUD';
 
 import {Button } from 'react-native';
 
@@ -14,10 +14,11 @@ const ClearJob = ()=>{
 
     useEffect(()=>{
         if(jobCleared>0){
-            clearJobsFromRealm().then(()=>{
+            clearFromRealm("Job").then(()=>{
                 dispatch(updateJobList())
             })
         }
+
     },[jobCleared])
 
     return(

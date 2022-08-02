@@ -11,6 +11,7 @@ import JobSelectionMenu from '../Components/Containers/JobSelectionMenu'
 
 import SelectedJobText from '../Components/Containers/SelectedJobText'
 import Permission from '../Components/Containers/Permissions'
+import Canvas from '../Components/Containers/Canvas'
 const TrackScreen = () =>{
     return(
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>

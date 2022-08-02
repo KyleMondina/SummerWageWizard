@@ -1,4 +1,4 @@
-const SchemaVersion = 3
+const SchemaVersion = 5
 
 const JobSchema = {
     name: "Job",
@@ -10,8 +10,20 @@ const JobSchema = {
     primaryKey: '_id'
 }
 
+const GeofenceSchema = {
+    name: "Geofence",
+    properties: {
+        _id: 'int',
+        jobId: 'int',
+        lat: 'int',
+        long: 'int',
+        radius: 'int'
+    },
+    primaryKey: "_id"
+}
+
 const realmConfig = {
-    schema:[JobSchema],
+    schema:[JobSchema, GeofenceSchema],
     schemaVersion:SchemaVersion
 }
 

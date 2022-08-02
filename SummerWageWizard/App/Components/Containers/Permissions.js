@@ -1,32 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Platform, Text, View, StyleSheet, Button } from 'react-native';
 import * as Location from 'expo-location';
+import Canvas from './Canvas';
 
 
 const Permission = ()=>{
     const [forgroundPermission, setForegroundPermission] = useState(false)
     const [backgroundPermission, setBackgroundPermission] = useState(false)
-
-    /*const requestPermissions2 = async ()=>{
-        Location.getForegroundPermissionsAsync().then((foregroundStatus)=>{
-            console.log(foregroundStatus)
-            if (foregroundStatus.status==='granted'){
-                setForegroundPermission(true)
-                console.log("foreground permission granted")
-                Location.getBackgroundPermissionsAsync().then((backgroundStatus)=>{
-                    //console.log(backgroundStatus.toString())
-                    if(backgroundStatus==='granted'){
-                        setBackgroundPermission(true)
-                        console.log("background permission granted")
-                    }else{
-                        console.log("background permission not granted")
-                    }
-                })
-            }else{
-                console.log("forground denied")
-            }
-        })
-    }*/
 
     const requestPermissions = async ()=>{
         let {status} = await Location.requestForegroundPermissionsAsync()
@@ -59,7 +39,7 @@ const Permission = ()=>{
 
     if(forgroundPermission && backgroundPermission){
         return(
-            <Text>Success!</Text>
+            <Canvas/>
         )
     }else{
         return(

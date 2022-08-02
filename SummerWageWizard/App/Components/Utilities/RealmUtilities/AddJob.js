@@ -2,18 +2,16 @@ import * as React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import {
     updateJobList,
-    selectJobListUpdated
 } from '../../../Redux/features/jobSlice'
   
 import { useState, useEffect } from 'react';
-import {addJobToRealm} from '../../../Realm/realmJobUtilities';
+import { addToRealm } from '../../../Realm/dbCRUD';
 
 import { View, Button, TextInput } from 'react-native';
 
 const AddJob = ()=>{
 
     const dispatch = useDispatch()
-    const jobListUpdated = useSelector(selectJobListUpdated)
     
     const [jobAdded,addJob] = useState(null)
     const [jobEmployer,setJobEmployer] = useState(' ')
@@ -21,7 +19,7 @@ const AddJob = ()=>{
 
     useEffect(()=>{
         if (jobAdded !== null){
-            addJobToRealm(jobAdded).then(()=>{
+            addToRealm("Job",jobAdded).then(()=>{
                 dispatch(updateJobList())
             })
         }
