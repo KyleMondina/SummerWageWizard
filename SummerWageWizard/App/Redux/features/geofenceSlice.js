@@ -3,7 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 export const geofenceSlice = createSlice({
   name: 'geofence',
   initialState: {
-    isInsideGeofence: false
+    isInsideGeofence: false,
+    geofencesUpdated: 0
+
   },
   reducers: {
     enterGeofence: state => {
@@ -12,10 +14,14 @@ export const geofenceSlice = createSlice({
     exitGeofence: state => {
         state.isInsideGeofence = false
     },
+    updateGeofences: state =>{
+        state.geofencesUpdated+=1
+    }
   }
 })
 
-export const { enterGeofence, exitGeofence} = geofenceSlice.actions
+export const { enterGeofence, exitGeofence, updateGeofences} = geofenceSlice.actions
 export const selectIsInsideGeofence = (state) => state.geofence.isInsideGeofence
+export const selectGeofencesUpdated = (state) => state.geofence.geofencesUpdated
 
 export default geofenceSlice.reducer
