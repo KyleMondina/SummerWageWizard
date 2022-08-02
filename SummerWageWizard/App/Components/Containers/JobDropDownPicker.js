@@ -6,7 +6,11 @@ import {
 import { useState, useEffect } from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
 
-const JobDropDownPicker = (props)=>{
+//enhancers
+import { selectJobListUpdated } from '../../Redux/features/jobSlice';
+import withRealmData from '../Enhancers/withRealmData';
+
+const _JobDropDownPicker = (props)=>{
     const jobsFromRealm = props.data
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
@@ -45,6 +49,7 @@ const JobDropDownPicker = (props)=>{
     )
 }
 
+const JobDropDownPicker = withRealmData(_JobDropDownPicker,"Job",selectJobListUpdated)
 export default JobDropDownPicker
 
 

@@ -2,12 +2,11 @@ import * as React from 'react'
 import { useState, useEffect, useRef } from 'react';
 import Realm from 'realm'
 import realmConfig from '../../Realm/realmConfig';
-import { selectJobListUpdated } from '../../Redux/features/jobSlice';
 import { useSelector } from 'react-redux';
 
-const withRealmJobData = Component => ({...props}) =>{
+const withRealmData = (Component,realmType,selector) => ({...props}) =>{
 
-    const jobListUpdated = useSelector(selectJobListUpdated)
+    const realmSelector = useSelector(selector)
     const realmRef = useRef(null);
     const [data,setData]  = useState(null)
 
@@ -15,7 +14,7 @@ const withRealmJobData = Component => ({...props}) =>{
         Realm.open(realmConfig).then((realmResult)=>{
             realmRef.current = realmResult
             const realmData = realmRef.current
-            setData(realmData.objects("Job").map(object=>object))
+            setData(realmData.objects(realmType).map(object=>object))
         })
         //clean side effects
         return ()=>{
@@ -27,7 +26,7 @@ const withRealmJobData = Component => ({...props}) =>{
                 realmRef.current = null
             }
         }
-    },[jobListUpdated])
+    },[realmSelector])
 
 
 
@@ -36,5 +35,4 @@ const withRealmJobData = Component => ({...props}) =>{
     )
 }
 
-export default withRealmJobData
-
+export default withRealmData
