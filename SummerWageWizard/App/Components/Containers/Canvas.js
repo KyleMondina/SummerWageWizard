@@ -1,5 +1,6 @@
 import React from "react";
 import { View } from "react-native";
+import { Text } from "react-native";
 
 import Timer from "./Timer";
 import TimerControls from "../Utilities/TestControls/TimerControls";
@@ -11,13 +12,16 @@ import SelectedJobText from "./SelectedJobText";
 import AddGeofence from "../Utilities/RealmUtilities/AddGeofence";
 import ClearGeofences from "../Utilities/RealmUtilities/ClearGeofences";
 import TestGeofences from "../Utilities/RealmUtilities/TestGeofences";
+import MapView from "react-native-maps";
+import Map from "./Map";
 const Canvas = ()=>{
     return(
         <View>
-            <JobSelectionMenu/>
+            {/*<JobSelectionMenu/>
             <AddJob/>
             <ClearJob/>
-            <TestGeofences/>
+            <TestGeofences/>*/}
+            <Map/>
         </View>
     )
 }
