@@ -5,7 +5,7 @@ const DEFAULT_LATITUDE_DELTA = 0.000922;
 const DEFAULT_LONGITUDE_DELTA = 0.000421;
 
 const SANTA_CLARA_UNIVERSITY = {
-    latitude: 37.3496,
+    latitude: 38.3496,
     longitude: -121.9390,
     latitudeDelta: DEFAULT_LATITUDE_DELTA,
     longitudeDelta: DEFAULT_LONGITUDE_DELTA
@@ -45,6 +45,8 @@ const MAP_CONSTANTS = {
             ...StyleSheet.absoluteFillObject,
             },
         }),
+    default_latitude: SANTA_CLARA_UNIVERSITY.latitude,
+    default_longitude: SANTA_CLARA_UNIVERSITY.longitude,
     default_latitude_delta: DEFAULT_LATITUDE_DELTA,
     default_longitude_delta: DEFAULT_LONGITUDE_DELTA
 }

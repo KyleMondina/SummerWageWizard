@@ -12,22 +12,22 @@ const Permission = ()=>{
         let {status} = await Location.requestForegroundPermissionsAsync()
         if (status==='granted'){
             setForegroundPermission(true)
-            console.log("code called from Permissions.js line 14")
+            console.log("-----code called from Permissions.js line 14-----")
             console.log("foreground permission granted")
             let {status} = await Location.requestBackgroundPermissionsAsync()
             if(status==='granted'){
                 setBackgroundPermission(true)
-                console.log("code called from Permissions.js line 19")
+                console.log("-----code called from Permissions.js line 19-----")
                 console.log("background permission granted")
                 return
             }
             else{
-                console.log("code called from Permissions.js line 23")
+                console.log("-----code called from Permissions.js line 23-----")
                 console.log("background permission denied")
                 return
             }
         }else{
-            console.log("code called from Permissions.js line 27")
+            console.log("-----code called from Permissions.js line 27-----")
             console.log("forground permission denied")
             return
         }

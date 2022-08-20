@@ -44,9 +44,9 @@ const AddGeofence = ()=>{
                 onPress = {()=>{
                     addGeofence({
                         jobId: selectedJob,
-                        lat: Number(lat),
-                        long: Number(long),
-                        radius: Number(radius)
+                        lat: parseFloat(lat),
+                        long: parseFloat(long),
+                        radius: parseFloat(radius)
                     })
                     setLat("")
                     setLong("")

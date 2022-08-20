@@ -14,19 +14,30 @@ import ClearGeofences from "../Utilities/RealmUtilities/ClearGeofences";
 import TestGeofences from "../Utilities/RealmUtilities/TestGeofences";
 import MapView from "react-native-maps";
 import Map from "./Map";
+import Tracker from "./Tracker";
+import ChangeLocation from "../Utilities/RealmUtilities/ChangeLocation";
 const Canvas = ()=>{
     return(
         <View>
-            {/*<JobSelectionMenu/>
-            <AddJob/>
-            <ClearJob/>
-            <TestGeofences/>*/}
+            <JobSelectionMenu/>
             <Map/>
+            <AddJob></AddJob>
+            <ChangeLocation/>
+            <Tracker/>
         </View>
     )
 }
 
 export default Canvas
+
+
+/**
+             <JobSelectionMenu/>
+            <AddJob/>
+            <ClearJob/>
+            <Map/>
+            <AddGeofence/>
+ */
 
 
 

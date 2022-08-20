@@ -1,4 +1,4 @@
-const SchemaVersion = 5
+const SchemaVersion = 7
 
 const JobSchema = {
     name: "Job",
@@ -15,9 +15,9 @@ const GeofenceSchema = {
     properties: {
         _id: 'int',
         jobId: 'int',
-        lat: 'int',
-        long: 'int',
-        radius: 'int'
+        lat: 'double',
+        long: 'double',
+        radius: 'double'
     },
     primaryKey: "_id"
 }

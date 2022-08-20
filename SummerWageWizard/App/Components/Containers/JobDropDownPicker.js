@@ -19,7 +19,7 @@ const _JobDropDownPicker = (props)=>{
 
     useEffect(()=>{
         if (jobsFromRealm){
-            console.log("code called from JobDropDownPicker line 18:")
+            console.log("-----code called from JobDropDownPicker line 18-----")
             console.log(jobsFromRealm)
             setPickerItems(jobsFromRealm.map((job)=>{
                 return{
@@ -49,7 +49,7 @@ const _JobDropDownPicker = (props)=>{
     )
 }
 
-const JobDropDownPicker = withRealmData(_JobDropDownPicker,"Job",selectJobListUpdated)
+const JobDropDownPicker = withRealmData(_JobDropDownPicker,"Job",[selectJobListUpdated],null,null)
 export default JobDropDownPicker
 
 
