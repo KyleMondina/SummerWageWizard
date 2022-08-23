@@ -15,8 +15,8 @@ const GeofenceSchema = {
     properties: {
         _id: 'int',
         jobId: 'int',
-        lat: 'double',
-        long: 'double',
+        latitude: 'double',
+        longitude: 'double',
         radius: 'double'
     },
     primaryKey: "_id"

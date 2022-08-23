@@ -16,13 +16,15 @@ import MapView from "react-native-maps";
 import Map from "./Map";
 import Tracker from "./Tracker";
 import ChangeLocation from "../Utilities/RealmUtilities/ChangeLocation";
+import GeofenceChecker from "./GeofenceChecker";
 const Canvas = ()=>{
     return(
         <View>
+            <Timer/>
             <JobSelectionMenu/>
             <Map/>
-            <AddJob></AddJob>
-            <ChangeLocation/>
+            <GeofenceChecker/>
+            <AddGeofence/>
             <Tracker/>
         </View>
     )

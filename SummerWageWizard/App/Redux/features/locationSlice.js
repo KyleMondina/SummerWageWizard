@@ -1,23 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
-import MAP_CONSTANTS from '../../Components/Utilities/MapConstants'
+import * as MapUtil from '../../Components/Utilities/MapUtil'
 
 export const locationSlice = createSlice({
     name: 'location',
     initialState:{
-        location: {
-            latitude:MAP_CONSTANTS.default_latitude,
-            longitude:MAP_CONSTANTS.default_longitude,
-            latitudeDelta:MAP_CONSTANTS.default_latitude_delta,
-            longitudeDelta:MAP_CONSTANTS.default_longitude_delta
-        }
+        location: MapUtil.locations.santa_clara_university
     },
     reducers:{
         updateLocation: (state,action)=>{
             state.location={
                 latitude:action.payload.latitude,
                 longitude:action.payload.longitude,
-                latitudeDelta:MAP_CONSTANTS.default_latitude_delta,
-                longitudeDelta:MAP_CONSTANTS.default_longitude_delta
+                latitudeDelta:MapUtil.default_latitude_delta,
+                longitudeDelta:MapUtil.default_longitude_delta
             }
         }
     }
