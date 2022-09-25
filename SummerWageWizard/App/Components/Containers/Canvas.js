@@ -17,9 +17,11 @@ import Map from "./Map";
 import Tracker from "./Tracker";
 import ChangeLocation from "../Utilities/RealmUtilities/ChangeLocation";
 import GeofenceChecker from "./GeofenceChecker";
+import DebugInfo from "./DebugInfo";
 const Canvas = ()=>{
     return(
         <View>
+            <DebugInfo></DebugInfo>
             <Timer/>
             <JobSelectionMenu/>
             <Map/>
