@@ -5,6 +5,7 @@ import { addToRealm } from '../../../Realm/dbCRUD';
 import { useState, useEffect } from 'react';
 import { selectSelectedJob } from '../../../Redux/features/jobSlice';
 import { View, Button, TextInput } from 'react-native';
+import formStyles from '../../Styles/formStyles';
 
 const AddGeofence = ()=>{
     const dispatch = useDispatch()
@@ -23,21 +24,26 @@ const AddGeofence = ()=>{
     },[geofenceAdded])
 
     return(
-        <View>
+        <View style = {formStyles.container}>
             <TextInput
                 onChangeText={setLat}
                 placeholder="Latitude"
                 value={lat}
+                style = {formStyles.textInput}
             />
             <TextInput
                 onChangeText={setLong}
                 placeholder="Longitude"
                 value={long}
+                style = {formStyles.textInput}
+
             />
             <TextInput
                 onChangeText={setRadius}
                 placeholder="Radius"
                 value={radius}
+                style = {formStyles.textInput}
+
             />
             <Button 
                 title="Add Geofence" 

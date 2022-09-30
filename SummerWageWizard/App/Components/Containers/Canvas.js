@@ -23,7 +23,7 @@ const Canvas = ()=>{
     return(
         <View>
             <TestNewRealmData/>
-            <AddJob/>
+            <ClearGeofences/>
         </View>
     )
 }

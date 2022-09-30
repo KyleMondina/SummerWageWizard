@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import { addToRealm } from '../../../Realm/dbCRUD';
 
 import { View, Button, TextInput } from 'react-native';
+import formStyles from '../../Styles/formStyles';
 
 const AddJob = ()=>{
 
@@ -26,16 +27,18 @@ const AddJob = ()=>{
     },[jobAdded])
 
     return(
-        <View>
+        <View style = {formStyles.container}>
             <TextInput
                 onChangeText={setJobEmployer}
                 placeholder="Employer"
                 value={jobEmployer}
+                style={formStyles.textInput}
             />
             <TextInput
                 onChangeText={setJobClient}
                 placeholder="Client"
                 value={jobClient}
+                style={formStyles.textInput}
             />
             <Button 
                 title="Add Job" 
