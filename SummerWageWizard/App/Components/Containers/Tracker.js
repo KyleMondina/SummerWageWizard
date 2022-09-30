@@ -63,6 +63,7 @@ const Tracker = ()=>{
             dispatch(startTracking())
             startBackgroundUpdate()
         }else{
+            //check if inside a geofence, if it is, log one
             dispatch(stopTracking())
             stopBackgroundUpdate()
         }
