@@ -1,7 +1,7 @@
 import * as React from 'react'
 import withGeofencesBySelectedID from '../Enhancers/withGeofencesBySelectedID.js.js'
 import { useEffect } from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
 const _DisplayGeofences = (props) =>{
     const geofences = props.data

@@ -4,39 +4,26 @@ import Realm from 'realm'
 import realmConfig from '../../Realm/realmConfig';
 import { useSelector } from 'react-redux';
 
-const withRealmData = (Component,realmType,selectors,filter,filterValue) => ({...props}) =>{
+const withRealmData = (Component,realmType,selectors, filter=null) => ({...props}) =>{
 
     const realmSelectors = selectors.map(selector=>useSelector(selector))
-    const realmRef = useRef(null);
     const [data,setData]  = useState(null)
-
     useEffect(()=>{
-        Realm.open(realmConfig).then((realmResult)=>{
-            realmRef.current = realmResult
-            const realmData = realmRef.current
-            if ((filter!==null)&&(filterValue!==null)){
-                console.log("-----code called from withRealmData  line 18-----")
-                console.log("filter and filter value provided")
-                setData(realmData.objects(realmType).filtered(`${filter}==${filterValue}`).map(object=>JSON.parse(JSON.stringify(object))))
-                
-            }
-            else{
-                console.log("-----code called from withRealmData  line 24-----")
-                console.log("filter and filter value not provided")
-                setData(realmData.objects(realmType).map(object=>JSON.parse(JSON.stringify(object))))
-            }
-        })
 
-        return(()=>{
-            const realmSession = realmRef.current
-            if(realmSession){
-                console.log("-----code called from withRealmData line 36-----")
-                console.log("useEffect clean up function ran")
-                realmSession.close()
-                realmRef.current = null
+        const fetchData = async () =>{
+            const realm = await Realm.open(realmConfig)
+            let data = null
+            if (filter===null){
+                data = realm.objects(realmType).map(object=>JSON.parse(JSON.stringify(object)))
+                console.log("no filterrrrrrr provided")
+            }else{
+                data = realm.objects(realmType).filtered(`${filter.filter}==${filter.filterValue}`).map(object=>JSON.parse(JSON.stringify(object)))
+                console.log("fileterrrrrrrrr provided")
             }
-            console.log(data)
-        })
+            setData(data)
+            realm.close()
+        }
+        fetchData()
 
     },realmSelectors)
 

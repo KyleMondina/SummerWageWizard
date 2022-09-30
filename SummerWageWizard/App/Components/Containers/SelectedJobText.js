@@ -2,7 +2,7 @@ import * as React from 'react'
 import Realm from 'realm'
 import realmConfig from '../../Realm/realmConfig';
 import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector} from 'react-redux';
 import { selectSelectedJob } from '../../Redux/features/jobSlice';
 import { Text } from 'react-native'
 

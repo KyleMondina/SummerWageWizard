@@ -1,17 +1,11 @@
 import * as React from 'react'
-import { useDispatch } from 'react-redux';
-import {
-    changeSelectedJob,
-  } from '../../Redux/features/jobSlice';
 import { useState, useEffect } from 'react';
-import DropDownPicker from 'react-native-dropdown-picker';
 import { selectJobListUpdated, selectSelectedJob } from '../../Redux/features/jobSlice'
 import { selectGeofencesUpdated } from '../../Redux/features/geofenceSlice'
 
 
 //enhancers
 import withRealmData from '../Enhancers/withRealmData';
-import withRealmDataV2 from '../Enhancers/withRealmDataV2';
 
 
 const _TestNewRealmData = (props)=>{
@@ -24,7 +18,7 @@ const _TestNewRealmData = (props)=>{
 
 }
 
-const TestNewRealmData = withRealmDataV2(_TestNewRealmData,"Geofence",[selectJobListUpdated,selectGeofencesUpdated],{filter:'jobId',filterValue:3})
+const TestNewRealmData = withRealmData(_TestNewRealmData,"Geofence",[selectJobListUpdated,selectGeofencesUpdated],{filter:'jobId',filterValue:2})
 
 export default TestNewRealmData
 

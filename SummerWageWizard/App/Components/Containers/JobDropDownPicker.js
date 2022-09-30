@@ -49,7 +49,7 @@ const _JobDropDownPicker = (props)=>{
     )
 }
 
-const JobDropDownPicker = withRealmData(_JobDropDownPicker,"Job",[selectJobListUpdated],null,null)
+const JobDropDownPicker = withRealmData(_JobDropDownPicker,"Job",[selectJobListUpdated])
 export default JobDropDownPicker
 
 

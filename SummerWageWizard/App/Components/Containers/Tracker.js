@@ -5,10 +5,9 @@ import { View, Button, Text } from 'react-native';
 import * as MapUtil from '../Utilities/MapUtil'
 import store from '../../Redux/store';
 import { startTracking, stopTracking } from '../../Redux/features/trackSlice';
-import { selectIsTracking } from '../../Redux/features/trackSlice';
 import { updateLocation } from '../../Redux/features/locationSlice';
 import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const BACKGROUND_LOCATION_TRACKING = "BACKGROUND_LOCATION_TRACKING"
 
