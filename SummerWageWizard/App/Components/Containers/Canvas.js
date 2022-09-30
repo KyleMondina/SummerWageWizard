@@ -18,16 +18,12 @@ import Tracker from "./Tracker";
 import ChangeLocation from "../Utilities/RealmUtilities/ChangeLocation";
 import GeofenceChecker from "./GeofenceChecker";
 import DebugInfo from "./DebugInfo";
+import TestNewRealmData from "./TestNewRealmData";
 const Canvas = ()=>{
     return(
         <View>
-            <DebugInfo></DebugInfo>
-            <Timer/>
-            <JobSelectionMenu/>
-            <Map/>
-            <GeofenceChecker/>
-            <AddGeofence/>
-            <Tracker/>
+            <TestNewRealmData/>
+            <AddJob/>
         </View>
     )
 }
