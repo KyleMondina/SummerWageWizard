@@ -4,6 +4,7 @@ import geofenceReducer from './features/geofenceSlice'
 import jobReducer from './features/jobSlice'
 import trackReducer from './features/trackSlice'
 import locationReducer from './features/locationSlice'
+import workLogsSlice from './features/workLogsSlice.js'
 
 export default configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export default configureStore({
     geofence: geofenceReducer,
     job:jobReducer,
     track:trackReducer,
-    location:locationReducer
+    location:locationReducer,
+    workLogs:workLogsSlice
   }
 })
