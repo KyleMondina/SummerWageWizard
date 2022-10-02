@@ -22,8 +22,19 @@ const GeofenceSchema = {
     primaryKey: "_id"
 }
 
+const WorkLogSchema = {
+    name: "WorkLog",
+    properties: {
+        _id: 'int',
+        jobId: 'int',
+        time: 'int',
+        date: 'date'
+    },
+    primaryKey: "_id"
+}
+
 const realmConfig = {
-    schema:[JobSchema, GeofenceSchema],
+    schema:[JobSchema, GeofenceSchema, WorkLogSchema],
     schemaVersion:SchemaVersion
 }
 
