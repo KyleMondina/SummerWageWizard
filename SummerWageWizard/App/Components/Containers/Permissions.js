@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Platform, Text, View, StyleSheet, Button } from 'react-native';
 import * as Location from 'expo-location';
-import Canvas from './Canvas';
-
+import TrackCanvas from './TrackCanvas';
 
 const Permission = ()=>{
     const [forgroundPermission, setForegroundPermission] = useState(false)
@@ -39,7 +38,7 @@ const Permission = ()=>{
 
     if(forgroundPermission && backgroundPermission){
         return(
-            <Canvas/>
+            <TrackCanvas/>
         )
     }else{
         return(

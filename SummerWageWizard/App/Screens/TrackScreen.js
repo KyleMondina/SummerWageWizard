@@ -14,10 +14,7 @@ import Permission from '../Components/Containers/Permissions'
 import Canvas from '../Components/Containers/Canvas'
 const TrackScreen = () =>{
     return(
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Track Screen</Text>
             <Permission/>
-        </View>
     )
 }
 
