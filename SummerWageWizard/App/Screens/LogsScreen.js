@@ -32,7 +32,10 @@ const Child = () => {
 const LogsScreen = () =>{
     return(
             <SafeAreaView style = {{flex:1}}> 
-                <Stack.Navigator initialRouteName='Parent'>
+                <Stack.Navigator 
+                    initialRouteName='Parent'
+                    screenOptions={{headerShown:false}}
+                >
                     <Stack.Screen name = 'WorkLogsList' component = {WorkLogsList} />
                     <Stack.Screen name = 'DetailedWorkLog' component = {DetailedWorkLog} />
                 </Stack.Navigator>
